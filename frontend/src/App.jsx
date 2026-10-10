@@ -1,11 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 
-// npm run dev -> local backend, npm run build (Render) -> production backend
-// Render-la backend deploy aanadhum, keezha irukkura URL-ah maathunga
-const BACKEND_URL = import.meta.env.DEV
-  ? "http://localhost:8000"
-  : "https://rag-chatbot-api.onrender.com";
+// Render Static Site env-la VITE_BACKEND_URL kudunga, local-la illaatti localhost:8000
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:8000";
 
 const SUGGESTIONS = [
   "What skills does Yasir know?",
